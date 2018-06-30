@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* ### Ruby 2.4.2
 
 * System dependencies
 
@@ -21,4 +21,20 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* Fourth change
+>This is a Ruby on Rails 5 applocation tahta allows users to create their own portfolios.
+
+### features
+
+-Real time chat engine for comments
+-Blog
+-Portfolio
+-Drag and drop interface
+
+```ruby
+def my_great_method
+	puts "here it is"
+end
+```
+```javascript
+alert('Hi there')
+```
