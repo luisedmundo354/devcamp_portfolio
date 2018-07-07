@@ -41,14 +41,27 @@ alert('Hi there')
 ### Build pages via controller generator
 
 rails g controller <controller name> <controller arguments or pages>
-rails g controller Pages home about 
+rails g controller Pages home about
 
 ### Upload to github
 
 git add .
 git commit -m "<message>
-git push 
+git push
 
 ### start postgresql
 
 - sudo service postgresql start
+
+### Rails console
+
+- rails c
+
+###Create a record in the rails console
+
+- Skill.create!(tittle: "Rails", percent_utilized: 75)
+
+###Rails convention
+
+- Models are written in singular Model
+- Controllers are written in plural Controllers
