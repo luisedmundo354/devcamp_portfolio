@@ -38,3 +38,17 @@ end
 ```javascript
 alert('Hi there')
 ```
+### Build pages via controller generator
+
+rails g controller <controller name> <controller arguments or pages>
+rails g controller Pages home about 
+
+### Upload to github
+
+git add .
+git commit -m "<message>
+git push 
+
+### start postgresql
+
+- sudo service postgresql start
