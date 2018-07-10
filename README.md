@@ -113,4 +113,70 @@ rails db:setup
 
 ### Imbedded Ruby
 
--When the ruby code is into <% %> rails is not going to render that code. If you write <%= %> then it is going to render the piece of code you write.
+- When the ruby code is into <% %> rails is not going to render that code. If you write <%= %> then it is going to render the piece of code you write.
+
+### Make an index view
+
+- In the view index.html.erb
+
+```html
+<% @portfolio_items.each do |portfolio_items| %>
+  <p><%= portfolio_items.title %></p>
+  <p><%= portfolio_items.subtitle %></p>
+  <p><%= portfolio_items.body %></p>
+  <p><%= image_tag portfolio_items.thumb_image if !portfolio_items.thumb_image.nil? %></p>
+<% end %>
+```
+- In the controller
+
+```Ruby
+def index
+	@portfolio_items = Portfolio.all
+end
+```
+### Make a create method
+
+- In the view
+
+```html
+<%= form_with(model: @portfolio, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :portfolio_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtitle %>
+    <%= form.text_field :subtitle, id: :portfolio_subtitle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :portfolio_body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+```
+
+- In the controller
+
+```ruby
+def new
+	@portfolio = Portfolio.new
+end
+
+def create
+	@portfolio = Portfolio.new(params.require(:portfolio).permit(:title,:subtitle, :body))
+
+	respond_to do |format|
+		if @portfolio.save
+			format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
+		else
+			format.html { render :new }
+		end
+	end
+end
+```
