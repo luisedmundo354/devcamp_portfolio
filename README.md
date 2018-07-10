@@ -87,3 +87,19 @@ where model-generator is the branch and you are currently in the master branch
 
 - Models are written in singular Model
 - Controllers are written in plural Controllers
+
+### Create items for each database table via seeds.rb
+
+```ruby
+5.times do |skill|
+  Skill.create!(
+    tittle: "Rails #{skill}",
+    percent_utilized: 15
+  )
+end```
+
+- This is written in the file seeds.rb, then this command should be executed in the prompt shell
+
+```shell
+rails db:setup
+'''
