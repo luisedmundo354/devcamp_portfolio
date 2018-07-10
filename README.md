@@ -60,6 +60,10 @@ git add .
 git commit -m "<message>
 git push
 
+### Create an app
+
+rails new GeneratorApp -T --database=postgresql
+
 #### To merge a branch into the master
 
 - git merge model-generator
