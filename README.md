@@ -96,10 +96,14 @@ where model-generator is the branch and you are currently in the master branch
     tittle: "Rails #{skill}",
     percent_utilized: 15
   )
-end```
-
+end
+```
 - This is written in the file seeds.rb, then this command should be executed in the prompt shell
 
 ```shell
 rails db:setup
-'''
+```
+
+### Imbedded Ruby
+
+-When the ruby code is into <% %> rails is not going to render that code. If you write <%= %> then it is going to render the piece of code you write.
