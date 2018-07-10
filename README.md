@@ -46,44 +46,51 @@ rails g controller Pages home about
 ### Build models via model generator
 
 Just create a model which communicates with the database
-```rails g model Skill name:string percentage_utilized:integer
+```shell
+rails g model Skill name:string percentage_utilized:integer
  ```
 
 ### Build a resource via resource generator
 
 Is like a minimal scaffold. It does not create all the mothods in the controllers no any view but the folders and the files.
-```rails g resource Portfolio title:string subtitle:string body:text main_image:text thumb_image:text
+```shell
+rails g resource Portfolio title:string subtitle:string body:text main_image:text thumb_image:text
 ```
 ### Upload to github
 
+```shell
 git add .
-git commit -m "<message>
+git commit -m <message>
 git push
-
+```
 ### Create an app
 
+```shell
 rails new GeneratorApp -T --database=postgresql
-
+```
 #### To merge a branch into the master
 
-- git merge model-generator
-- git push
+```shell
+git merge model-generator
+git push
+```
 
-where model-generator is the branch and you are currently in the master branch
+Where model-generator is the branch and you are currently in the master branch
 
 ### start postgresql
-
-- sudo service postgresql start
-
+```shell
+sudo service postgresql start
+```
 ### Rails console
+```shell
+rails c
+```
+### Create a record in the rails console
 
-- rails c
-
-###Create a record in the rails console
-
-- Skill.create!(tittle: "Rails", percent_utilized: 75)
-
-###Rails convention
+```ruby
+Skill.create!(tittle: "Rails", percent_utilized: 75)
+```
+### Rails convention
 
 - Models are written in singular Model
 - Controllers are written in plural Controllers
