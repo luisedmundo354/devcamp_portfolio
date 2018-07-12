@@ -1,8 +1,25 @@
 <h1>Portfolio items</h1>
 
+<!--This isn't the most correct way to do this, but the one below -->
+<a href="portfolios/new">Create New Item</a>
+
+<%= link_to "Create New Item", new_portfolio_path %>
+
+<!--this show the methods (prefix) and how they are to-->
+<p>
+  <%= new_portfolio_path %>
+</p>
+
+<p>
+  <%= new_portfolio_url %>
+</p>
+
 <% @portfolio_items.each do |portfolio_items| %>
   <p><%= portfolio_items.title %></p>
   <p><%= portfolio_items.subtitle %></p>
   <p><%= portfolio_items.body %></p>
   <p><%= image_tag portfolio_items.thumb_image if !portfolio_items.thumb_image.nil? %></p>
+  <%= link_to "Edit", edit_portfolio_path(portfolio_items.id) %>
+<!--This below is the worse way to make the link, above cleaner code-->
+  <a href="/portfolios/<%= portfolio_items.id%>/edit">Edit two</a>
 <% end %>
