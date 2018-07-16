@@ -15,11 +15,12 @@
 </p>
 
 <% @portfolio_items.each do |portfolio_items| %>
-  <p><%= portfolio_items.title %></p>
+  <p><%= link_to portfolio_items.title, portfolio_path(portfolio_items)%></p>
+<!--Rails knows that we are trying to pass the id, thus we can ommit it. Both odf them work.  <p><%= link_to portfolio_items.title, portfolio_path(portfolio_items.id)%></p>  -->
   <p><%= portfolio_items.subtitle %></p>
   <p><%= portfolio_items.body %></p>
   <p><%= image_tag portfolio_items.thumb_image if !portfolio_items.thumb_image.nil? %></p>
-  <%= link_to "Edit", edit_portfolio_path(portfolio_items.id) %>
+  <%= link_to "Edit", edit_portfolio_path(portfolio_items) %>
 <!--This below is the worse way to make the link, above cleaner code-->
   <a href="/portfolios/<%= portfolio_items.id%>/edit">Edit two</a>
 <% end %>

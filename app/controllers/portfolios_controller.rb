@@ -33,6 +33,10 @@ class PortfoliosController < ApplicationController
       end
     end
   end
+
+  def show
+    @portfolio = Portfolio.find(params[:id])
+  end
 #This is copyed into the new.permit method
 #  def blog_params
 #    params.require(:blog).permit(:tittle, :body)
