@@ -23,4 +23,6 @@
   <%= link_to "Edit", edit_portfolio_path(portfolio_items) %>
 <!--This below is the worse way to make the link, above cleaner code-->
   <a href="/portfolios/<%= portfolio_items.id%>/edit">Edit two</a>
+<!--What it is telling rails that the method sent it delete is the method :delete part-->
+  <%= link_to 'Delete portfolio item', portfolio_path(portfolio_items), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>

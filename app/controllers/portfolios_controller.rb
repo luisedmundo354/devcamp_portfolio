@@ -37,6 +37,17 @@ class PortfoliosController < ApplicationController
   def show
     @portfolio = Portfolio.find(params[:id])
   end
+
+  def destroy
+    #Perform the lookup
+    @portfolio = Portfolio.find(params[:id])
+    #Destroy/delete the record
+    @portfolio.destroy
+    #Redirect
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.' }
+    end
+  end
 #This is copyed into the new.permit method
 #  def blog_params
 #    params.require(:blog).permit(:tittle, :body)
