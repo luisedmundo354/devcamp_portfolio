@@ -15,7 +15,7 @@
 </p>
 
 <% @portfolio_items.each do |portfolio_items| %>
-  <p><%= link_to portfolio_items.title, portfolio_path(portfolio_items)%></p>
+  <p><%= link_to portfolio_items.title, portfolio_show_path(portfolio_items)%></p>
 <!--Rails knows that we are trying to pass the id, thus we can ommit it. Both odf them work.  <p><%= link_to portfolio_items.title, portfolio_path(portfolio_items.id)%></p>  -->
   <p><%= portfolio_items.subtitle %></p>
   <p><%= portfolio_items.body %></p>
